@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class='d-flex justify-content-between mb-5'>
+        <h1>Welcome {{session['first_name']}}</h1>
+        <div class="nav">
+            <a href="/dashboard">Dashboard</a>|
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+        <div class="mainBody ms-5">
+            <h2>{{single_recipe.name}}</h3>
+                <div class="recipeInfo border">
+                    <p>Description: {{single_recipe.description}}</p>
+                    <p>Under 30 mins: {{single_recipe.under}}</p>
+                    <p>Instructions: {{single_recipe.instructions}}</p>
+                    <p>Date made: {{single_recipe.date}}</p>
+                </div>
+        </div>
+</body>
+</html>

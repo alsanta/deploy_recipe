@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class='d-flex justify-content-between mb-5'>
+        <h1>Add New Recipe</h1>
+        <div class="nav">
+            <a href="/dashboard">Dashboard</a>|
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form id='newRecipe' action="/new_recipe" method='POST'>
+        <div class="top d-flex justify-content-between mb-3">
+            <div class="name d-flex flex-column">
+                <label for="name">Name:</label>
+                <input type="text" name='name'>
+            </div>
+            <div class="date d-flex flex-column">
+                <label for="date">Date Made On:</label>
+                <input type="date" name="date">
+            </div>
+        </div>
+        <div class="mid d-flex justify-content-between mb-3">
+            <div class="description d-flex flex-column">
+                <label for="description">Description:</label>
+                <textarea name="description" id="" cols="40" rows="3"></textarea>
+            </div>
+            <div class="30min d-flex flex-column">
+                <label for="30min">Under 30 mins?</label>
+                <div class="radio">
+                    <input type="radio" name="under" value="Yes" required>
+                    <label for="Yes">Yes</label>
+                    <input type="radio" name="under" value="No" required>
+                    <label for="No">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="instructions d-flex flex-column mb-3">
+            <label for="instructions">Instructions</label>
+            <textarea name="instructions" id="" cols="40" rows="5"></textarea>
+        </div>
+        <input class='subBtn' type="submit" value="Create">
+    </form>
+</body>
+
+</html>

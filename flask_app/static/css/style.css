@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    padding: 10px;
+    background-color: lightseagreen;
+}
+
+.subBtn{
+    background-color: teal;
+    color: white;
+    padding: 2px 4px;
+}
+
+.mainBody{
+    margin: 0 10px;
+}
+
+form{
+    width: 500px;
+}
+
+#newRecipe{
+    margin: 0 auto;
+    width: 30%;
+}
